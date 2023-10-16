@@ -19,7 +19,6 @@ into the {body} tag of the default.hbs template --}}
                 <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
             {{/if}}
               {{#if tags}}
-                {{#tags  separator=" | "}}
                 <ul>
                     {{#foreach tags}}
                         <li class="post-card-primary-tag">
