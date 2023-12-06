@@ -42,6 +42,8 @@ production stylesheet in assets/built/screen.css
     --color-border: #e1e1e1;
     --color-wash: #e5eff5;
     --color-darkmode: #151719;
+    --color-hover:#e31c79;
+    --color-header-darkmode:#000;
 
     /*
     An accent color is also set by Ghost itself in
@@ -2050,9 +2052,7 @@ iframe.instagram-media + script + :not([id]) {
 
 .site-footer {
     position: relative;
-    margin: max(12vmin, 64px) 0 0 0;
-    padding-top: 48px;
-    padding-bottom: 140px;
+    padding: 48px 0 ;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
@@ -2335,6 +2335,8 @@ html.dark-mode .footer-cta-title {
         color: rgba(255, 255, 255, 0.75);
         background: var(--color-darkmode);
     }
+
+    html.auto-color .inner-wrapper {  background: var(--color-darkmode)}
 
     html.auto-color img {
         opacity: 0.9;
@@ -3034,3 +3036,103 @@ file to add some of your own styles. Well, you've come to
 the right place. Onward!
 
  */
+
+ /* custom styling */
+
+ #gh-head {
+  position: sticky;
+  top: 0;
+  background: var(--ghost-accent-color);
+}
+
+#gh-head nav {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#gh-head nav a,
+.gh-search,
+.nav-more-toggle {
+  color: #fff;
+  font-weight: 700;
+}
+
+.gh-burger::before,
+.gh-burger::after {
+  background: #fff;
+}
+
+#gh-head nav a[href="https://content.axioned.com"] {
+  color: var(--color-hover);
+  opacity: 100;
+}
+
+.gh-head-button {
+  border: 1px solid var(--color-hover);
+  background: var(--color-hover);
+}
+
+.gh-head-open #gh-head .gh-head-actions {
+  background: transparent;
+}
+
+.post-card-image {
+  aspect-ratio: 3/2;
+}
+
+.site-footer,
+.gh-dropdown {
+  background: var(--ghost-accent-color);
+}
+
+.fluid-width-video-wrapper {
+  padding-top: 382.2px !important;
+}
+
+.fluid-width-video-wrapper iframe,
+.fluid-width-video-wrapper iframe[name="fitvid0"] {
+  width: 100% !important;
+}
+
+.outer-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  background: var(--ghost-accent-color);
+}
+
+.inner-wrapper {
+  width: 97%;
+  padding-bottom: max(12vmin, 64px);
+  margin: 0 auto;
+  background: #fff;
+}
+
+html.dark-mode .inner-wrapper {
+  background: var(--color-darkmode)
+}
+
+html.dark-mode .outer-wrapper {
+  background: var(--ghost-accent-color)
+}
+
+/* dark mode  */
+html.dark-mode #gh-head,
+html.dark-mode .site-footer,
+html.dark-mode .gh-dropdown {
+  background: var(--ghost-accent-color);
+}
+
+@media screen and (min-width:1024px) {
+  #gh-head nav a:hover {
+    color: var(--color-hover);
+    opacity: 100;
+    transition: all 300ms ease-in-out;
+  }
+
+  .gh-head-button:hover {
+    background: #fff;
+    color: var(--color-hover);
+    transition: all 300ms ease-in-out;
+  }
+}
