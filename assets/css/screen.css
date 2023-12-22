@@ -3063,7 +3063,7 @@ the right place. Onward!
   background: #fff;
 }
 
-#gh-head nav a[href="https://content.axioned.com"] {
+#gh-head nav a[href="https://insights.axioned.com"] {
   color: var(--color-hover);
   opacity: 100;
 }
@@ -3106,21 +3106,6 @@ the right place. Onward!
   padding-bottom: max(12vmin, 64px);
   margin: 0 auto;
   background: #fff;
-}
-
-html.dark-mode .inner-wrapper {
-  background: var(--color-darkmode)
-}
-
-html.dark-mode .outer-wrapper {
-  background: var(--ghost-accent-color)
-}
-
-/* dark mode  */
-html.dark-mode #gh-head,
-html.dark-mode .site-footer,
-html.dark-mode .gh-dropdown {
-  background: var(--ghost-accent-color);
 }
 
 @media screen and (min-width:1024px) {

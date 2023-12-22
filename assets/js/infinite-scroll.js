@@ -50,7 +50,11 @@
             // document.importNode is important, without it the item's owner
             // document will be different which can break resizing of
             // `object-fit: cover` images in Safari
-            if(!item.classList.contains("featured"))  feedElement.appendChild(document.importNode(item, true));
+            
+            // Exclude featured blogs from appending again after the feature blogs are loaded at the top
+            // if(!item.classList.contains("featured"))  feedElement.appendChild(document.importNode(item, true));
+            
+            feedElement.appendChild(document.importNode(item, true));
         });
 
         // set next link
